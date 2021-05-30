@@ -1,3 +1,5 @@
+const target = document.querySelector(".message");
+
 // algo 5
 
 // const sentence = prompt("Entre une phrase, ce que tu veux mais magne !");
@@ -22,7 +24,7 @@
 //     ? "Personnage 2 dit : " + sentence
 //     : "Personnage 3 dit : " + sentence;
 
-// document.write(msg);
+// target.textContent = msg
 
 // algo 6
 // const number = prompt("Entre un nombre au hasard");
@@ -35,9 +37,9 @@
 // }
 
 // if (dividers.length === 2) {
-//   console.log("Le nombre est premier");
+//   target.textContent = "Le nombre est premier";
 // } else {
-//   console.log("Liste des diviseurs : " + dividers.join(","));
+//   target.textContent = "Liste des diviseurs : " + dividers.join(",");
 // }
 
 // algo 7
@@ -83,7 +85,7 @@ while (guesses.length < 6 && winStatus !== true) {
 }
 
 if (winStatus) {
-  document.write("L'algo a gagné");
+  target.textContent = "L'algo a gagné !"
 } else {
-  document.write("L'algo a perdu");
+  target.textContent = "L'algo a perdu..."
 }

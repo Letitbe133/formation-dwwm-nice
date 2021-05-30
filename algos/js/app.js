@@ -1,6 +1,9 @@
 const target = document.querySelector(".message");
+const algo = document.querySelector(".algo")
 
 // algo 5
+
+// algo.textContent = "Algo 5"
 
 // const sentence = prompt("Entre une phrase, ce que tu veux mais magne !");
 
@@ -27,6 +30,9 @@ const target = document.querySelector(".message");
 // target.textContent = msg
 
 // algo 6
+
+// algo.textContent = "Algo 6"
+
 // const number = prompt("Entre un nombre au hasard");
 // const dividers = [];
 
@@ -43,6 +49,9 @@ const target = document.querySelector(".message");
 // }
 
 // algo 7
+
+// algo.textContent = "Algo 7"
+
 const number = prompt("Choisis un nombre au hasard entre 0 et 100");
 let guess = Math.floor(Math.random() * 100);
 let answer = false;

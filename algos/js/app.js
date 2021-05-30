@@ -50,8 +50,6 @@ const algo = document.querySelector(".algo")
 
 // algo 7
 
-// algo.textContent = "Algo 7"
-
 const number = prompt("Choisis un nombre au hasard entre 0 et 100");
 let guess = Math.floor(Math.random() * 100);
 let answer = false;

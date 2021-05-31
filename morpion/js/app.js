@@ -46,6 +46,12 @@ gameContainer.addEventListener("click", function (e) {
   //   change player
   playerOneIsActive = !playerOneIsActive;
 
+  if (playerOneIsActive) {
+    playerOneIsActive = false;
+  } else {
+    playerOneIsActive = true;
+  }
+
   checkVictory();
 });
 
@@ -87,6 +93,13 @@ function checkVictory() {
         msg = playerOneIsActive
           ? "Le joueur 2 a gagné !"
           : "Le joueur 1 a gagné !";
+
+        // if(playerOneIsActive) {
+        //   msg = "Le joueur 2 a gagné"
+        // } else {
+        //   msg ="Le joueur 1 a gagné"
+        // }
+
         return;
       }
     }

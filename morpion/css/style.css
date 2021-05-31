@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-container {
+  width: 400px;
+  height: 400px;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: repeat(3, 1fr);
+  -ms-grid-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.case {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  font-size: 2rem;
+  transition: transform 250ms ease;
+}
+
+.case:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

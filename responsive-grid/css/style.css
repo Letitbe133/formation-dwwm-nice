@@ -1,0 +1,56 @@
+/* keyword : @media */
+/* device : all (défaut) screen print */
+/* conditions pour appliquer les règles css */
+/* propriétés css */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "aside aside section1 section1"
+    "aside aside section2 section2"
+    "footer footer footer footer";
+}
+
+section {
+  background: lightgreen;
+}
+aside {
+  background: lightblue;
+  grid-area: aside;
+}
+header {
+  background: salmon;
+  grid-area: header;
+}
+footer {
+  background: purple;
+  grid-area: footer;
+}
+
+.section1 {
+  grid-area: section1;
+}
+.section2 {
+  grid-area: section2;
+}
+main {
+  grid-area: main;
+}
+
+/* positionnez les media queries après votre CSS pour éviter tout conflit dans le code */
+
+/* les propriétés CSS dans cette media query ne s'appliqueront que si la largeur de la fenêtre du navigateur est inférieure ou égale à 600px */
+@media (max-width: 600px) {
+  .container {
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "section1 section1 section1 section1"
+      "section2 section2 section2 section2"
+      "aside aside aside aside"
+      "footer footer footer footer";
+  }
+}

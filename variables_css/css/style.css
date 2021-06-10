@@ -1,0 +1,33 @@
+/* 2 manières de déclarer les variables CSS : 
+- globale : variables accessibles partout dans le document
+- locale : élément par élément
+*/
+
+/* Déclaration globale */
+/* on utilise une pseudo-classe :root */
+
+:root {
+  --bg-main: purple;
+  --color-fallback: orange;
+  --text-color: pink;
+  --red: red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-color);
+}
+
+h1 {
+  /* déclaration locale */
+  /* ne concerne que cet élément */
+  --text-color: gray;
+  color: var(--text-color);
+}
+
+h2 {
+  color: var(--red, var(--color-fallback));
+}

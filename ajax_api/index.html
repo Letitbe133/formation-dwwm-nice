@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo AJAX + API</title>
-    <script src="js/app.js" defer></script>
+    <!-- <script src="js/app.js" defer></script> -->
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <h1>Demo AJAX + API</h1>
-    <div class="container"></div>
+    <div>
+      <button id="getData">Get Data</button>
+      <button id="postData">Post Data</button>
+      <button id="getCocktail">Get Random Cocktail</button>
+    </div>
+    <div>
+      <input id="user-choice" type="text" placeholder="Choose an ingredient" />
+    </div>
+    <div class="container">
+      <div class="cocktails"></div>
+    </div>
   </body>
 </html>

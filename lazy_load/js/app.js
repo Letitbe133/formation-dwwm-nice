@@ -1,34 +1,56 @@
+// on récupère la ref des images
 const images = document.querySelectorAll("img");
 
-window.addEventListener("scroll", () => {
-  // get window height
-  const windowHeight = window.innerHeight;
+const imageOptions = {
+  // root est l'élément sur lequel on va observer les Intersections
+  // par défaut c'est le viewport
+  root: null,
+  // la portion de l'élément qui doit entrer dans le viewport
+  // c'est une valeur entre 0 et 1
+  threshold: 0.5,
+  // uniquement px ou %
+  // permet d'étendre ou de réduire la zone de détection des collisions
+  rootMargin: "0px",
+};
 
-  // get document height
-  const documentHeight = document.body.clientHeight;
+// const imageObserver = new IntersectionObserver(function (entries, observer) {
+//   entries.forEach(function (entry) {
+//     if (entry.isIntersecting) {
+//       //   console.log("Entering viewport");
+//       //   console.log(entry.target);
+//       entry.target.src = entry.target.getAttribute("data-src");
+//     } else {
+//       console.log("Leaving viewport");
+//     }
+//   });
+// }, imageOptions);
 
-  //   get document scroll
-  const yScroll = window.scrollY;
+// images.forEach(function (image) {
+//   imageObserver.observe(image);
+// });
 
-  images.forEach((image, index) => {
-    const imageOffset = image.offsetTop;
-    const imageMiddle = yScroll + windowHeight - image.height / 2;
-
-    if (imageMiddle > imageOffset) {
-      // (this.scrollY + this.innerHeight) > item.offsetTop
-      console.log(`Image ${index} in viewport`);
-      //   image.src = "./assets/Below_the_surface.png";
+// version ES6 avec arrow functions
+const imageObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const { isIntersecting, target } = entry;
+    if (isIntersecting) {
+      target.src = target.getAttribute("data-src");
     } else {
-      console.log("no good");
+      console.log("Leaving viewport");
     }
   });
+}, imageOptions);
+
+images.forEach((image) => {
+  imageObserver.observe(image);
 });
 
-function displayImage(image) {
-  // get image offset top
-  images.forEach((image, index) => {
-    // check if image in viewport
-  });
-}
+// destructuring d'un objet en js
+// const obj = {
+//   prop1: "prop1",
+//   prop2: "prop2",
+//   prop3: "prop3",
+// };
 
-displayImage();
+// const { prop1, prop2 } = obj;
+// console.log(prop1, prop2);

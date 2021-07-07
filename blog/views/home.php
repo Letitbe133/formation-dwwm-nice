@@ -1,3 +1,44 @@
+<?php
+/*
+    // on vérifie si on a un paramètre status dans l'url
+    // if (isset($_GET['status'])) {
+    //     $status = $_GET['status'];
+
+    //     // je vérifie quel le status
+    //     if ('success' === $status) {?>
+            <!-- <div>
+                <p>Votre post a été sauvegardé</p>
+            </div> -->
+       <?php// } else {?>
+            <!-- <div>
+                <p>Erreur de sauvegarde</p>
+            </div> -->
+        <?php
+    // }
+    // }
+    */
+    if (isset($_GET['status'])) {
+        $status = $_GET['status'];
+
+        if ('success' === $status) {
+            $output = <<<'OUTPUT'
+            <div>
+                <p>Votre post a été sauvegardé</p>
+            </div>
+OUTPUT;
+            echo $output;
+        } else {
+            $output = <<<'OUTPUT'
+            <div>
+                <p>Erreur de savuvegarde</p>
+            </div>
+OUTPUT;
+            echo $output;
+        }
+    }
+        ?>
+
+
 <h2>Home Page</h2>
 
 <h3>Créer un article</h3>
@@ -10,4 +51,5 @@
         <input type="submit" name="submit" value="Sauvegarder">
 
     </form>
+    
 </div>

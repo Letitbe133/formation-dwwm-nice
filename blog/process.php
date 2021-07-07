@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
         $post = [
             'id' => uniqid(),
             'postTitle' => $_POST['title'],
-            'postDecsription' => $_POST['description'],
+            'postDescription' => $_POST['description'],
         ];
 
         // il reste à sauver le post dans la bdd

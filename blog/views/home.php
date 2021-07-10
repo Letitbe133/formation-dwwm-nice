@@ -28,13 +28,6 @@ OUTPUT;
 
 <div class="container" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
 
-    <!-- <form action="process.php" method="post" style="display: flex; flex-direction:column; align-items:center; gap:1rem;">
-        <input type="text" name="title" placeholder="Entrez le titre" required>
-        <textarea name="description" cols="30" rows="10" placeholder="Entrez une description" required></textarea>
-        <input type="submit" name="submit" value="Sauvegarder">
-
-    </form> -->
-
     <!-- form bootstrap -->
     <form action="process.php" method="post">
         <fieldset>
@@ -80,6 +73,7 @@ OUTPUT;
                     <img src="//unsplash.it/400"/>
                     <div class="card-body">
                         <p class="card-text">{$array['postDescription']}</p>
+                        <a href="single.php?id={$array['id']}" class="btn btn-primary">Read</a>
                     </div>
                     <div class="card-footer text-muted">
                         Publié le : 2 days ago
